@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.AppModel">
+      <HintPath>..\Library\Core.AppModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Common">
+      <HintPath>..\Library\Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Resilience.Http">
+      <HintPath>..\Library\Core.Resilience.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ichiba.Bank.Api.Driver\Ichiba.Bank.Api.Driver.csproj" />
+    <ProjectReference Include="..\Ichiba.IS4.Api.Driver\Ichiba.IS4.Api.Driver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.AppModel">
+      <HintPath>..\Library\Core.AppModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Common">
+      <HintPath>..\Library\Core.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

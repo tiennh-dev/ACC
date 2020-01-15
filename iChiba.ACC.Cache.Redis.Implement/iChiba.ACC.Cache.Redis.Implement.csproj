@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iChiba.ACC.Cache.Interface\iChiba.ACC.Cache.Interface.csproj" />
+    <ProjectReference Include="..\iChiba.ACC.Cache.Model\iChiba.ACC.Cache.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Cache.Redis.Interface">
+      <HintPath>..\Library\Core.Cache.Redis.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="iChibaShopping.Service.Interface">
+      <HintPath>..\Library\iChibaShopping.Service.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

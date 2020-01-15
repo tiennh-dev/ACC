@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"Ichibacustomer_TestContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":false,"OutputPath":null,"ProjectRootNamespace":"iChiba.OM.CustomException","SelectedToBeGenerated":0,"Tables":[{"HasPrimaryKey":true,"Name":"dbo.ORDER"}],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":false}

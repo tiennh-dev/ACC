@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iChiba.ACC.Service.Interface\iChiba.ACC.Service.Interface.csproj" />
+    <ProjectReference Include="..\iChiba.OM.Model\iChiba.ACC.Model.csproj" />
+  </ItemGroup>
+
+</Project>
