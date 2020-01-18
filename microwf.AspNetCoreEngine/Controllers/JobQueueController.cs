@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tomware.Microwf.Engine
 {
-  [Authorize]
+  //[Authorize]
   [Route("api/jobqueue")]
   public class JobQueueController : Controller
   {
@@ -23,7 +23,7 @@ namespace tomware.Microwf.Engine
     }
 
     [HttpGet("snapshot")]
-    [Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
+    //[Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
     [ProducesResponseType(typeof(IEnumerable<WorkItem>), 200)]
     public ActionResult<IEnumerable<WorkItem>> GetSnapshot()
     {
@@ -33,7 +33,7 @@ namespace tomware.Microwf.Engine
     }
 
     [HttpGet("upcommings")]
-    [Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
+    //[Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
     [ProducesResponseType(typeof(PaginatedList<WorkItem>), 200)]
     public async Task<ActionResult<IEnumerable<WorkItem>>> GetUpcommings(
       [FromQuery] PagingParameters pagingParameters
@@ -48,7 +48,7 @@ namespace tomware.Microwf.Engine
     }
 
     [HttpGet("failed")]
-    [Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
+    //[Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
     [ProducesResponseType(typeof(PaginatedList<WorkItem>), 200)]
     public async Task<ActionResult<IEnumerable<WorkItem>>> GetFailed(
       [FromQuery] PagingParameters pagingParameters
@@ -63,7 +63,7 @@ namespace tomware.Microwf.Engine
     }
 
     [HttpPost("reschedule")]
-    [Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
+    //[Authorize(Constants.MANAGE_WORKFLOWS_POLICY)]
     [ProducesResponseType(204)]
     [ProducesResponseType(400)]
     public async Task<ActionResult> Reschedule([FromBody]WorkItemViewModel model)

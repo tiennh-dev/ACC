@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\iChiba.ACC.Model\iChiba.ACC.Model.csproj" />
     <ProjectReference Include="..\microwf.AspNetCoreEngine\microwf.AspNetCoreEngine.csproj" />
   </ItemGroup>
 

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iChiba.ACC.Repository.Interface\iChiba.ACC.Repository.Interface.csproj" />
-    <ProjectReference Include="..\iChiba.OM.Model\iChiba.ACC.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\iChiba.ACC.PrivateApi.AppModel\iChiba.ACC.PrivateApi.AppModel.csproj" />
     <ProjectReference Include="..\Ichiba.Bank.Api.Driver\Ichiba.Bank.Api.Driver.csproj" />
     <ProjectReference Include="..\Ichiba.IS4.Api.Driver\Ichiba.IS4.Api.Driver.csproj" />
   </ItemGroup>

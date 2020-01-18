@@ -20,8 +20,6 @@
     <ProjectReference Include="..\iChiba.ACC.Service.Interface\iChiba.ACC.Service.Interface.csproj" />
     <ProjectReference Include="..\Ichiba.Bank.Api.Driver\Ichiba.Bank.Api.Driver.csproj" />
     <ProjectReference Include="..\Ichiba.IS4.Api.Driver\Ichiba.IS4.Api.Driver.csproj" />
-    <ProjectReference Include="..\iChiba.OM.DbContext\iChiba.ACC.DbContext.csproj" />
-    <ProjectReference Include="..\iChiba.OM.Model\iChiba.ACC.Model.csproj" />
     <ProjectReference Include="..\iChiba.LocalizationCommon\iChiba.LocalizationCommon.csproj" />
     <ProjectReference Include="..\Ichiba.Partner.Api.Driver\Ichiba.Partner.Api.Driver.csproj" />
     <ProjectReference Include="..\Ichiba.PurchaseReport.Api.Driver\Ichiba.PurchaseReport.Api.Driver.csproj" />

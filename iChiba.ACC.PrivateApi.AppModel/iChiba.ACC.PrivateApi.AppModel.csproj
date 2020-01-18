@@ -9,21 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\iChiba.OM.Model\iChiba.ACC.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Core.AppModel">
       <HintPath>..\Library\Core.AppModel.dll</HintPath>
     </Reference>
     <Reference Include="iChibaShopping.Index.Model">
       <HintPath>..\Library\iChibaShopping.Index.Model.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Request\" />
-    <Folder Include="Response\" />
   </ItemGroup>
 
 </Project>

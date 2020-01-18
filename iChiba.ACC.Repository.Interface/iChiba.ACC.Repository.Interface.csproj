@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\iChiba.OM.DbContext\iChiba.ACC.DbContext.csproj" />
-    <ProjectReference Include="..\iChiba.OM.Model\iChiba.ACC.Model.csproj" />
+    <ProjectReference Include="..\iChiba.ACC.Model\iChiba.ACC.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
