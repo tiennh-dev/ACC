@@ -3,6 +3,7 @@
     public class ErrorCodeDefine : iChibaShopping.Core.CustomException.ErrorCodeDefine
     {
         public const string CHECK_BANK_ACCOUNT = "THE_BANK_ACCOUNT_ALREADY_EXISTS_IN_THE_SYSTEM";
+        public const string GET_BANK_ACCOUNT = "BANK_ACCOUNT_NOT_FOUND";
 
         #region Deposit
 

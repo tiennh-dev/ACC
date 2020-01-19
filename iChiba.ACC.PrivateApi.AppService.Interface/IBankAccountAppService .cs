@@ -12,5 +12,6 @@ namespace iChiba.ACC.PrivateApi.AppService.Interface
     {
         Task<BankAccountListResponse> GetBankAccounts(BankAccountListRequest request);
         Task<BaseResponse> Add(BankAccountAddRequest request);
+        Task<BaseResponse> Delete(int Id);
     }
 }

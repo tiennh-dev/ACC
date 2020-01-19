@@ -23,6 +23,11 @@ namespace iChiba.ACC.Service.Implement
             return bankAccountRepository.Find(new BankAccountGetBy(Keyword, BankAccount, BankName, Owner, Active), sorts, paging).ToList();
         }
 
+        public Bank_Account GetById(int Id)
+        {
+            return bankAccountRepository.FindById(Id);
+        }
+
         public IList<Bank_Account> GetAllBankAccounts()
         {
             return bankAccountRepository.Find().ToList();
@@ -31,6 +36,11 @@ namespace iChiba.ACC.Service.Implement
         public void Add(Bank_Account bank_Account)
         {
             bankAccountRepository.Add(bank_Account);
+        }
+
+        public void Delete(Bank_Account bank_Account)
+        {
+            bankAccountRepository.Delete(bank_Account);
         }
     }
 }

@@ -73,5 +73,27 @@ namespace iChiba.ACC.PrivateApi.Controllers
                 return BadRequest();
             }
         }
+
+
+        [HttpPost("{Id}")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(BaseResponse))]
+        public async Task<IActionResult> DeleteBankAccount(int Id)
+        {
+            try
+            {
+                var response = await bankaccountAppService.Delete(Id);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+
+                return BadRequest();
+            }
+        }
     }
 }

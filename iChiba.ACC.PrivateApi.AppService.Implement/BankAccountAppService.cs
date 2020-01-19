@@ -82,5 +82,23 @@ namespace iChiba.ACC.PrivateApi.AppService.Implement
             return Task.FromResult(response);
         }
 
+        public Task<BaseResponse> Delete(int Id)
+        {
+            var response = new BaseResponse();
+            TryCatch(() =>
+            {
+                var model = bankAccountService.GetById(Id);
+                if (model == null)
+                {
+                    throw new ErrorCodeException(ErrorCodeDefine.GET_BANK_ACCOUNT);
+                }
+
+                bankAccountService.Delete(model);
+                unitOfWork.Commit();
+                response.Successful();
+            },response);
+            return Task.FromResult(response);
+        }
+
     }
 }
