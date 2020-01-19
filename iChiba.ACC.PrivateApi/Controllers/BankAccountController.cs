@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Core.AppModel.Response;
 using Core.Common.JTable;
 using iChiba.ACC.PrivateApi.AppModel.Request;
 using iChiba.ACC.PrivateApi.AppModel.Response.Account;
@@ -15,30 +16,33 @@ using Microsoft.Extensions.Logging;
 
 namespace iChiba.ACC.PrivateApi.Controllers
 {
-    public class AccountController : BaseController
+    public class BankAccountController : BaseController
     {
-        private readonly IAccountAppService accountAppService;
+        private readonly IBankAccountAppService bankaccountAppService;
 
-        public AccountController(ILogger<AccountController> logger,
-            IAccountAppService accountAppService)
+        public BankAccountController(ILogger<AccountController> logger,
+            IBankAccountAppService bankaccountAppService)
             : base(logger)
         {
-            this.accountAppService = accountAppService;
+            this.bankaccountAppService = bankaccountAppService;
         }
 
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(AccountListResponse))]
-        public async Task<IActionResult> GetJtable(AccountListRequest jtableModel)
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(BankAccountListResponse))]
+        public async Task<IActionResult> GetJtable(BankAccountJtableModel jtableModel)
         {
             try
             {
-                //var appserviceRequest = jtableModel.ToModel();
-                var response = await accountAppService.GetAccount(jtableModel);
+                var appserviceRequest = jtableModel.ToModel();
+                var response = await bankaccountAppService.GetBankAccounts(appserviceRequest);
+                var responseJTable = JTableHelper.JObjectTable(response.Data.ToList(),
+                jtableModel.Draw,
+                response.Total);
 
-                return Ok(response);
+                return Ok(responseJTable);
             }
             catch (Exception ex)
             {
@@ -48,16 +52,17 @@ namespace iChiba.ACC.PrivateApi.Controllers
             }
         }
 
-        [HttpPost("{id}")]
+
+        [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(AccountListResponse))]
-        public async Task<IActionResult> GetAccountById(int id)
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(BaseResponse))]
+        public async Task<IActionResult> AddBankAccount(BankAccountAddRequest request)
         {
             try
             {
-                var response = await accountAppService.GetAccountById(id);
+                var response = await bankaccountAppService.Add(request);
 
                 return Ok(response);
             }

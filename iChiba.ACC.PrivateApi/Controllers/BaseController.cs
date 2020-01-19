@@ -9,7 +9,7 @@ namespace iChiba.ACC.PrivateApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Produces("application/json")]
     public class BaseController : ControllerBase
     {

@@ -240,6 +240,10 @@ namespace iChiba.ACC.PrivateApi
             services.AddTransient<IAccountAppService, AccountAppService>();
             services.AddTransient<IAccountRepository, AccountRepository>();
 
+            services.AddTransient<IBankAccountService, BankAccountService>();
+            services.AddTransient<IBankAccountAppService, BankAccountAppService>();
+            services.AddTransient<IBankAccountRepository, BankAccountRepository>();
+
 
 
 

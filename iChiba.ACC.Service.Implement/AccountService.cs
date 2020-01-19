@@ -18,9 +18,9 @@ namespace iChiba.ACC.Service.Implement
             this.accountRepository = accountRepository;
         }
 
-        public IList<Account> GetAccounts(string Keyword,string Name, int? Type, bool Active, Core.Common.Sorts sort, Core.Common.Paging paging)
+        public IList<Account> GetAccounts(string Keyword,string Name, int? Type, bool Active)
         {
-            return accountRepository.Find(new AccountGetBy(Keyword,Name,Type,Active),sort,paging).ToList();
+            return accountRepository.Find(new AccountGetBy(Keyword,Name,Type,Active)).ToList();
         }
 
         public IList<Account> GetListAccountsByParent(int parent)

@@ -32,9 +32,8 @@ namespace iChiba.ACC.PrivateApi.AppService.Implement
 
             TryCatch(() =>
             {
-                var sort = request.Sorts;
-                var paging = request.ToPaging();
-                var data = accountService.GetAccounts(request.Keyword, request.Name, request.Type, request.Actives, sort, paging);
+              
+                var data = accountService.GetAccounts(request.Keyword, request.Name, request.Type, request.Actives);
                 var responseData = data
                     .Select(m =>
                     {

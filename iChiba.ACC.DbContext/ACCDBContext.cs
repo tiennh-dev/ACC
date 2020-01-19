@@ -16,7 +16,7 @@ namespace iChiba.ACC.DbContext
         }
 
         public virtual DbSet<Account> Account { get; set; }
-        public virtual DbSet<BankAccount> BankAccount { get; set; }
+        public virtual DbSet<Bank_Account> Bank_Account { get; set; }
         public virtual DbSet<Currency> Currency { get; set; }
         public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
@@ -50,13 +50,13 @@ namespace iChiba.ACC.DbContext
                 entity.Property(e => e.Note).HasMaxLength(500);
             });
 
-            modelBuilder.Entity<BankAccount>(entity =>
+            modelBuilder.Entity<Bank_Account>(entity =>
             {
                 entity.ToTable("BANK_ACCOUNT");
 
                 entity.Property(e => e.Address).HasMaxLength(255);
 
-                entity.Property(e => e.BankAccount1)
+                entity.Property(e => e.BankAccount)
                     .IsRequired()
                     .HasColumnName("BankAccount")
                     .HasMaxLength(255);
