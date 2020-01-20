@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Core.AppModel.Response;
 using Core.Common.JTable;
+using iChiba.ACC.PrivateApi.AppModel.Model;
 using iChiba.ACC.PrivateApi.AppModel.Request;
 using iChiba.ACC.PrivateApi.AppModel.Response.Account;
 using iChiba.ACC.PrivateApi.AppService.Interface;
@@ -85,6 +86,51 @@ namespace iChiba.ACC.PrivateApi.Controllers
             try
             {
                 var response = await bankaccountAppService.Delete(Id);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+
+                return BadRequest();
+            }
+        }
+
+
+        [HttpPost("{BankAccountId}")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(BaseEntityResponse<BankAccountView>))]
+        public async Task<IActionResult> GetBankAccountBuyId(int BankAccountId)
+        {
+            try
+            {
+                var response = await bankaccountAppService.GetBankAccountById(BankAccountId);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+
+                return BadRequest();
+            }
+        }
+
+
+
+        [HttpPost()]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(BaseResponse))]
+        public async Task<IActionResult> EditBankAccount(BankAccountEditRequest request)
+        {
+            try
+            {
+                var response = await bankaccountAppService.EditBankAccount(request);
 
                 return Ok(response);
             }

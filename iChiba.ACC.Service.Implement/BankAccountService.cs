@@ -42,5 +42,10 @@ namespace iChiba.ACC.Service.Implement
         {
             bankAccountRepository.Delete(bank_Account);
         }
+
+        public void Update(Bank_Account bank_Account)
+        {
+            bankAccountRepository.Update(bank_Account);
+        }
     }
 }

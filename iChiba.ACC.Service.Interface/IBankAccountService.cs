@@ -13,5 +13,6 @@ namespace iChiba.ACC.Service.Interface
         void Add(Bank_Account bank_Account);
         void Delete(Bank_Account bank_Account);
         Bank_Account GetById(int Id);
+        void Update(Bank_Account bank_Account);
     }
 }

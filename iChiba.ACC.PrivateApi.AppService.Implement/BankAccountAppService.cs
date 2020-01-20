@@ -100,5 +100,50 @@ namespace iChiba.ACC.PrivateApi.AppService.Implement
             return Task.FromResult(response);
         }
 
+        public Task<BaseEntityResponse<BankAccountView>> GetBankAccountById(int BankAccountId)
+        {
+            var response = new BaseEntityResponse<BankAccountView>();
+            TryCatch(() =>
+            {
+                var model = bankAccountService.GetById(BankAccountId);
+                if (model == null)
+                {
+                    throw new ErrorCodeException(ErrorCodeDefine.GET_BANK_ACCOUNT);
+                }
+
+                var dataMappig = AutoMapper.Mapper.Map<Bank_Account, BankAccountView>(model);
+
+                response.SetData(dataMappig).Successful();
+            }, response);
+            return Task.FromResult(response);
+        }
+
+        public Task<BaseResponse> EditBankAccount(BankAccountEditRequest request)
+        {
+            var response = new BaseResponse();
+            TryCatch(() =>
+            {
+                var model = bankAccountService.GetById(request.Id);
+                if (model == null)
+                {
+                    throw new ErrorCodeException(ErrorCodeDefine.GET_BANK_ACCOUNT);
+                }
+
+                model.BankAccount = request.BankAccount;
+                model.BankName = request.BankName;
+                model.Branch = request.Branch;
+                model.Province = request.Province;
+                model.Address = request.Address;
+                model.Owner = request.Owner;
+                model.Note = request.Note;
+                model.Active = request.Active;
+                bankAccountService.Update(model);
+                unitOfWork.Commit();
+
+                response.Successful();
+            }, response);
+            return Task.FromResult(response);
+        }
+
     }
 }
